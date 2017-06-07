@@ -1,15 +1,11 @@
-var CarModels = function() {
+var CarModels = function () {
 	this.options = {
 		numWheels    : 4,
 		manufacturer : 'Tesla',
 		make         : 'Model S',
 		stopped		 : 'I have stopped the car !'
 	};
-	this.numWheels    = 4;
-	this.manufacturer = 'Tesla';
-	this.make         = 'Model S';
-	this.select : document.getElementById(this.options.make);
-
+	this.select = document.getElementById(this.options.make);
 	this.init();
 };
 
@@ -42,3 +38,7 @@ CarModels.prototype = {
 
   }
 };
+
+var carmodels;
+if (carmodels == undefined || carmodels === {})
+	carmodels = new CarModels;
