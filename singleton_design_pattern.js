@@ -36,3 +36,4 @@ var printer = (function () {
   };
 
 })();
+var officePrinter = printer.getInstance();
