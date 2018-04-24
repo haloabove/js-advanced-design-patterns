@@ -1,36 +1,37 @@
-var CarModels = function () {
+var MainApp = function () {
 	this.options = {
-		numWheels    : 4,
-		manufacturer : 'Tesla',
-		make         : 'Model S',
-		stopped		 : 'I have stopped the car !'
+		param    	: 	1,
+		wrapperId 	: 'wrapId',
+		items	    : [1,2],
+		alertMsg	: 'Hello World!'
 	};
-	this.select = document.getElementById(this.options.make);
+	this.selected = document.getElementById(this.options.wrapperId);
 	this.init();
 };
 
-CarModels.prototype.init = function(){
+MainApp.prototype.init = function(){
 	this.attachEventListeners();
-	this.go();
+	this.exeMain();
 };
 
-CarModels.prototype.attachEventListeners = function(){
-	this.select.addEventListener("click", function(){
+MainApp.prototype.attachEventListeners = function(){
+	this.select.addEventListener("click", function(e){
     	this.go();
 	});
 };
 
-CarModels.prototype.go = function() {
+MainApp.prototype.go = function() {
 	SetTimeout(function(){
+		console.log('App is running')
 		this.stop();
 	},300);
 }.bind(this);
 
-CarModels.prototype.stop = function() {
-	alert(this.options.stopped);
+MainApp.prototype.stop = function() {
+	alert(this.options.alertMsg);
 };
 
-CarModels.prototype = {
+MainApp.prototype = {
   now: function() {
 
   },
@@ -39,6 +40,5 @@ CarModels.prototype = {
   }
 };
 
-var carmodels;
-if (carmodels == undefined || carmodels === {})
-	carmodels = new CarModels;
+if (mainApp == undefined || mainApp === {})
+	var mainApp = new MainApp;
